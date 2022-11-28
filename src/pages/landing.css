@@ -1,0 +1,77 @@
+.landing >h1{
+    font-size: 4.2rem;
+    font-family: 'Avenir';
+    color: #787777 ;
+}
+img{
+    max-width: 37rem;
+
+}
+p{
+    font-family: 'Avenir';
+    min-width: 30rem;
+    font-size: 1.1rem;
+}
+.landing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.button{
+    background-color: #3941CF;
+    width:6.4rem;
+    height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 1.4rem;
+    margin-top: 1.4rem;
+    text-align: center;
+    font-family: 'Avenir';
+    transition: all 0.5s;
+    
+}
+.button:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.clickers{
+    display: flex;
+    
+    justify-content: space-between;
+}
+.maintext{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 34rem;
+    
+}
+.empty{
+    width: 2rem;
+}
+.mainbody{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 7vh;
+    margin-top: -3rem;
+}
+@media(max-width: 60rem){
+    .mainbody{
+        grid-template-columns: 1fr ;
+        margin-top: -7rem;
+    }
+
+}
+.cite{
+    font-size: 10px;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
