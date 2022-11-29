@@ -1,4 +1,4 @@
 # TASKGURU
 
-## site is live:
+## App is live:
 ### https://candid-tartufo-22a1e8.netlify.app/
