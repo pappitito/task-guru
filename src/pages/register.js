@@ -2,8 +2,9 @@ import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import './login.css'
 
-const api_base = "http://localhost:5000/api/users/register"
+const api_base = "https://taskguru-api.onrender.com/api/users/register" 
 
+//"http://localhost:5000/api/users/register"
 export default function Register() {
     const [name, setName] = React.useState("")
     const [email, setEmail] = React.useState("")

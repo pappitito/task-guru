@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter,Routes, Route} from 'react-router-dom'
+import {HashRouter,Routes, Route} from 'react-router-dom'
 import './App.css';
 
 import  Landing  from './pages/landingPage'
@@ -18,8 +18,8 @@ function App() {
 
 
   return (
-    <body className="App">
-        <BrowserRouter>
+    <div className="App">
+        <HashRouter basename='/'>
             <Routes>
                 <Route exact path='/' element={<Landing />} />
                 <Route   path='login' element={<Login />} />
@@ -27,10 +27,10 @@ function App() {
                 <Route exact path='login/taskpage' element={<TaskPage />} />
                 <Route exact path='register/taskpage' element={<TaskPage />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
         <footer>Copyright @dev.banger by Tito 2022</footer>
       
-    </body>
+    </div>
   )
 }
 

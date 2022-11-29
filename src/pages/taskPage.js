@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import '../App.css';
 import Time from '../time';
 import {useNavigate} from 'react-router-dom'
-const api_url = "http://localhost:5000/api/tasks"
-
+const api_url = "https://taskguru-api.onrender.com/api/tasks"
+// || 
+//"http://localhost:5000/api/tasks"
 
 function Header(){
   let firstTime = new Date().toLocaleTimeString()
@@ -201,16 +202,23 @@ function TaskPage() {
   const [tasks, setTasks] = React.useState([])
   const [newTask, setNewtask] = React.useState("")
  
-
+  let taskElement = tasks.map((item) =>{
+  
+    return (
+      
+      <Task key={item._id} Task={item} stateSetter={setTasks}  />
+    )
+  }) 
  
 
   useEffect(()=>{
     getTasks()
     
-  })
+    
+  }, [])
   
-  function getTasks(){
-    fetch(api_url, {
+  async function getTasks(){
+    await fetch(api_url, {
         method: 'GET',
         headers: {"Content-type": "application/json",
                   "authorization": `Bearer ${localStorage.getItem('token')}` }
@@ -230,6 +238,8 @@ function TaskPage() {
       })
       .catch(err => console.error(err))
 
+      console.log('data fetched')
+
      
 
 
@@ -239,13 +249,7 @@ function TaskPage() {
   
   
 
-  let taskElement = tasks.map((item) =>{
   
-    return (
-      
-      <Task key={item._id} Task={item} stateSetter={setTasks}  />
-    )
-  }) 
 
 
   return (
